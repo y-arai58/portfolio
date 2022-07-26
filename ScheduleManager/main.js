@@ -65,8 +65,6 @@ const setTitle = (year, month) => {
 }
 
 const changeCalendar = (year, month) => {
-    let thead = document.getElementById("thead");
-    thead.innerHTML = "";
     let tbody = document.getElementById("tbody");
     tbody.innerHTML = "";
     setTitle(year, month);
