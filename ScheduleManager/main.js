@@ -32,11 +32,14 @@ const createThead = () => {
 }
 
 createThead();
-const showModal = (d, day) => {
+const showModal = (year, month, d, day) => {
     let modalTitle = document.getElementById("modalTitle");
     modalTitle.textContent = `${currentMonth}月${day}日（${weekList[d - 1]}）`;
+    initDisplayArea(year, month, day);
+    setSaveEvent(year, month, day);
     modal.classList.remove("hidden");
     mask.classList.remove('hidden');
+    createDisplayArea(year, month, day);
 }
 
 const creatCalendar = (year, month) => {
@@ -62,7 +65,7 @@ const creatCalendar = (year, month) => {
                 td.textContent = day;
                 td.classList.add("pointer");
                 td.addEventListener("click", () => {
-                    showModal(d, day)
+                    showModal(year, month, d, day);
                 });
             } else {
                 td.textContent = "";
@@ -160,6 +163,115 @@ let timeSelect = () => {
 
 timeSelect();
 
+const setSaveEvent = (year, month, day) => {
+    let saveSchedule = document.getElementById("saveSchedule");
+    saveSchedule.innerHTML = "";
+    let saveScheduleBtn = document.createElement("button");
+    saveScheduleBtn.textContent = "登録";
+    saveScheduleBtn.addEventListener("click", (e) => {
+        let startHour = document.getElementById("startHour").value;
+        let startMin = document.getElementById("startMin").value;
+        let endHour = document.getElementById("endHour").value;
+        let endMin = document.getElementById("endMin").value;
+        let text = document.getElementById("scheduleText").value;
+        let index = Number(localStorage.getItem(`${year}_${month}_${day}_index`));
+        if (!text) {
+            alert('内容が入力されていません。');
+        } else {
+            localStorage.setItem(`${year}_${month}_${day}_startHour_${index + 1}`, startHour);
+            localStorage.setItem(`${year}_${month}_${day}_startMin_${index + 1}`, startMin);
+            localStorage.setItem(`${year}_${month}_${day}_endHour_${index + 1}`, endHour);
+            localStorage.setItem(`${year}_${month}_${day}_endMin_${index + 1}`, endMin);
+            localStorage.setItem(`${year}_${month}_${day}_memo_${index + 1}`, text);
+            localStorage.setItem(`${year}_${month}_${day}_index`, index + 1);
+            document.getElementById("scheduleText").value = "";
+            createDisplayArea(year, month, day);
+        }
+    });
+    saveSchedule.appendChild(saveScheduleBtn);
+}
 
-let value = localStorage.getItem();
-localStorage.setItem();
+const createDisplayArea = (year, month, day) => {
+    let index = Number(localStorage.getItem(`${year}_${month}_${day}_index`));
+    let displayArea = document.getElementById("displayArea");
+    displayArea.innerHTML = "";
+    for (let d = 1; d <= index; d++) {
+        let p = document.createElement("p");
+        let button = document.createElement("button");
+        button.textContent = "✗";
+        let span = document.createElement("span");
+        let memo = localStorage.getItem(`${year}_${month}_${day}_memo_${d}`);
+        let startHour = localStorage.getItem(`${year}_${month}_${day}_startHour_${d}`);
+        let startMin = localStorage.getItem(`${year}_${month}_${day}_startMin_${d}`);
+        let endHour = localStorage.getItem(`${year}_${month}_${day}_endHour_${d}`);
+        let endMin = localStorage.getItem(`${year}_${month}_${day}_endMin_${d}`);
+        span.textContent = `${startHour}:${startMin}~${endHour}:${endMin}　　　${memo}`,
+
+            button.addEventListener("click", (e) => {
+                localStorage.removeItem(`${year}_${month}_${day}_startHour_${d}`);
+                localStorage.removeItem(`${year}_${month}_${day}_startMin_${d}`);
+                localStorage.removeItem(`${year}_${month}_${day}_endHour_${d}`);
+                localStorage.removeItem(`${year}_${month}_${day}_endMin_${d}`);
+                localStorage.removeItem(`${year}_${month}_${day}_memo_${d}`);
+                // for文でindexの訂正が必要
+                for (let i = d; i < index; i++) {
+                    localStorage.setItem(`${year}_${month}_${day}_startHour_${i}`, localStorage.getItem(`${year}_${month}_${day}_startHour_${i + 1}`));
+                    localStorage.setItem(`${year}_${month}_${day}_startMin_${i}`, localStorage.getItem(`${year}_${month}_${day}_startMin_${i + 1}`));
+                    localStorage.setItem(`${year}_${month}_${day}_endHour_${i}`, localStorage.getItem(`${year}_${month}_${day}_endHour_${i + 1}`));
+                    localStorage.setItem(`${year}_${month}_${day}_endMin_${i}`, localStorage.getItem(`${year}_${month}_${day}_endMin_${i + 1}`));
+                    localStorage.setItem(`${year}_${month}_${day}_memo_${i}`, localStorage.getItem(`${year}_${month}_${day}_memo_${i + 1}`));
+                }
+                localStorage.removeItem(`${year}_${month}_${day}_startHour_${index}`);
+                localStorage.removeItem(`${year}_${month}_${day}_startMin_${index}`);
+                localStorage.removeItem(`${year}_${month}_${day}_endHour_${index}`);
+                localStorage.removeItem(`${year}_${month}_${day}_endMin_${index}`);
+                localStorage.removeItem(`${year}_${month}_${day}_memo_${index}`);
+                localStorage.setItem(`${year}_${month}_${day}_index`, index - 1);
+                createDisplayArea(year, month, day);
+            });
+        p.appendChild(button);
+        p.appendChild(span);
+        displayArea.appendChild(p);
+    }
+}
+
+const initDisplayArea = (year, month, day) => {
+    let index = localStorage.getItem(`${year}_${month}_${day}_index`);
+    if (!index) {
+        localStorage.setItem(`${year}_${month}_${day}_index`, 0);
+    }
+}
+
+
+
+// for(){
+//     <p>
+//         <button>
+//             ✗
+//         </button>
+//         <span>aaaaa</span>
+//     </p>
+// }
+
+
+
+
+// 1 aaaaaa
+// 2 bbbbb
+// 3 vvvvv
+// 5 ggggg
+// 5 ggggg
+
+// 4 > 3 > 3
+// 5 > 4 > 4
+
+// 5
+
+// for (let index = 1; index < 11; index++) {
+//     localStorage.removeItem(`2022_7_7_startHour_${index}`);
+//     localStorage.removeItem(`2022_7_7_startMin_${index}`);
+//     localStorage.removeItem(`2022_7_7_endHour_${index}`);
+//     localStorage.removeItem(`2022_7_7_endMin_${index}`);
+//     localStorage.removeItem(`2022_7_7_memo_${index}`);
+// }
+// localStorage.setItem(`2022_7_7_index`, 0);
