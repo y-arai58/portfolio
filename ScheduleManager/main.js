@@ -8,6 +8,7 @@ const close = document.getElementById('close');
 const modal = document.getElementById('modal');
 const mask = document.getElementById('mask');
 const weekList = ["月", "火", "水", "木", "金", "土", "日"];
+const DISP_MEMO_MAX = 2;
 let targetDivId;
 const getDetaObject = (year, month, day, index) => {
     return {
@@ -27,10 +28,20 @@ const changeTargetDiv = () => {
     let month = keyList[1];
     let day = keyList[2];
     let index = Number(localStorage.getItem(`${year}_${month}_${day}_index`));
+    let plusCnt = 0;
+    if (index > DISP_MEMO_MAX) {
+        plusCnt = index - DISP_MEMO_MAX;
+        index = DISP_MEMO_MAX;
+    }
     for (let i = 1; i <= index; i++) {
         let data = getDetaObject(year, month, day, i);
         let p = document.createElement("p");
         p.textContent = data.memo;
+        targetDiv.appendChild(p);
+    }
+    if (plusCnt) {
+        let p = document.createElement("p");
+        p.textContent = `+${plusCnt}`;
         targetDiv.appendChild(p);
     }
 }
@@ -99,10 +110,20 @@ const creatCalendar = (year, month) => {
                     targetDivId = `${year}-${month}-${day}`;
                 });
                 let index = Number(localStorage.getItem(`${year}_${month}_${day}_index`));
+                let plusCnt = 0;
+                if (index > DISP_MEMO_MAX) {
+                    plusCnt = index - DISP_MEMO_MAX;
+                    index = DISP_MEMO_MAX;
+                }
                 for (let i = 1; i <= index; i++) {
                     let data = getDetaObject(year, month, day, i);
                     let p = document.createElement("p");
                     p.textContent = data.memo;
+                    div.appendChild(p);
+                }
+                if (plusCnt) {
+                    let p = document.createElement("p");
+                    p.textContent = `+${plusCnt}`;
                     div.appendChild(p);
                 }
                 td.appendChild(div);
