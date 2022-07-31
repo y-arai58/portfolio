@@ -8,15 +8,43 @@ const close = document.getElementById('close');
 const modal = document.getElementById('modal');
 const mask = document.getElementById('mask');
 const weekList = ["月", "火", "水", "木", "金", "土", "日"];
+let targetDivId;
+const getDetaObject = (year, month, day, index) => {
+    return {
+        memo: localStorage.getItem(`${year}_${month}_${day}_memo_${index}`),
+        startHour: localStorage.getItem(`${year}_${month}_${day}_startHour_${index}`),
+        startMin: localStorage.getItem(`${year}_${month}_${day}_startMin_${index}`),
+        endHour: localStorage.getItem(`${year}_${month}_${day}_endHour_${index}`),
+        endMin: localStorage.getItem(`${year}_${month}_${day}_endMin_${index}`)
+    }
+}
+
+const changeTargetDiv = () => {
+    let targetDiv = document.getElementById(targetDivId);
+    targetDiv.innerHTML = "";
+    keyList = targetDivId.split('-');
+    let year = keyList[0];
+    let month = keyList[1];
+    let day = keyList[2];
+    let index = Number(localStorage.getItem(`${year}_${month}_${day}_index`));
+    for (let i = 1; i <= index; i++) {
+        let data = getDetaObject(year, month, day, i);
+        let p = document.createElement("p");
+        p.textContent = data.memo;
+        targetDiv.appendChild(p);
+    }
+}
 
 close.addEventListener("click", () => {
     modal.classList.add("hidden");
     mask.classList.add('hidden');
+    changeTargetDiv();
 });
 
 mask.addEventListener('click', () => {
     modal.classList.add('hidden');
     mask.classList.add('hidden');
+    changeTargetDiv();
 });
 
 const createThead = () => {
@@ -61,12 +89,23 @@ const creatCalendar = (year, month) => {
         for (let d = 1; d <= 7; d++) {
             let td = document.createElement("td");
             let day = w * 7 + d - begineOfMonth + 1;
+            let div = document.createElement("div");
+            div.setAttribute("id", `${year}-${month}-${day}`);
             if (w * 7 + d - begineOfMonth >= 0) {
                 td.textContent = day;
                 td.classList.add("pointer");
                 td.addEventListener("click", () => {
                     showModal(year, month, d, day);
+                    targetDivId = `${year}-${month}-${day}`;
                 });
+                let index = Number(localStorage.getItem(`${year}_${month}_${day}_index`));
+                for (let i = 1; i <= index; i++) {
+                    let data = getDetaObject(year, month, day, i);
+                    let p = document.createElement("p");
+                    p.textContent = data.memo;
+                    div.appendChild(p);
+                }
+                td.appendChild(div);
             } else {
                 td.textContent = "";
             }
@@ -75,14 +114,11 @@ const creatCalendar = (year, month) => {
                 tbody.appendChild(tr);
                 break weekLoop;
             }
-
             tr.appendChild(td);
         }
         tbody.appendChild(tr);
     }
 }
-
-
 
 
 const setTitle = (year, month) => {
