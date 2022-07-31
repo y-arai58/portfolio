@@ -65,6 +65,9 @@ const createThead = () => {
     for (let i = 0; i < weekList.length; i++) {
         let th = document.createElement("th")
         th.textContent = weekList[i]
+        if (i >= 5) {
+            th.classList.add("holiday");
+        }
         tr.appendChild(th);
     }
     thead.appendChild(tr);
@@ -103,7 +106,12 @@ const creatCalendar = (year, month) => {
             let div = document.createElement("div");
             div.setAttribute("id", `${year}-${month}-${day}`);
             if (w * 7 + d - begineOfMonth >= 0) {
-                td.textContent = day;
+                let span = document.createElement("span");
+                if (d >= 6) {
+                    span.classList.add("holiday");
+                }
+                span.textContent = day;
+                td.appendChild(span);
                 td.classList.add("pointer");
                 td.addEventListener("click", () => {
                     showModal(year, month, d, day);
@@ -224,7 +232,10 @@ const setSaveEvent = (year, month, day) => {
     let saveSchedule = document.getElementById("saveSchedule");
     saveSchedule.innerHTML = "";
     let saveScheduleBtn = document.createElement("button");
+    let buttonDiv = document.createElement("div");
+    buttonDiv.classList.add("saveScheduleBtnDiv");
     saveScheduleBtn.textContent = "登録";
+    saveScheduleBtn.classList.add("saveScheduleBtn");
     saveScheduleBtn.addEventListener("click", (e) => {
         let startHour = document.getElementById("startHour").value;
         let startMin = document.getElementById("startMin").value;
@@ -245,7 +256,8 @@ const setSaveEvent = (year, month, day) => {
             createDisplayArea(year, month, day);
         }
     });
-    saveSchedule.appendChild(saveScheduleBtn);
+    buttonDiv.appendChild(saveScheduleBtn);
+    saveSchedule.appendChild(buttonDiv);
 }
 
 const createDisplayArea = (year, month, day) => {
@@ -256,38 +268,47 @@ const createDisplayArea = (year, month, day) => {
         let p = document.createElement("p");
         let button = document.createElement("button");
         button.textContent = "✗";
+        button.classList.add("deleteBtn");
         let span = document.createElement("span");
+        let spanMemo = document.createElement("span");
         let memo = localStorage.getItem(`${year}_${month}_${day}_memo_${d}`);
         let startHour = localStorage.getItem(`${year}_${month}_${day}_startHour_${d}`);
         let startMin = localStorage.getItem(`${year}_${month}_${day}_startMin_${d}`);
         let endHour = localStorage.getItem(`${year}_${month}_${day}_endHour_${d}`);
         let endMin = localStorage.getItem(`${year}_${month}_${day}_endMin_${d}`);
-        span.textContent = `${startHour}:${startMin}~${endHour}:${endMin}　　　${memo}`,
+        span.textContent = `${startHour}:${startMin}~${endHour}:${endMin}`;
+        spanMemo.textContent = memo;
+        spanMemo.classList.add("modal-memo-row");
+        span.classList.add("modal-row");
+        button.classList.add("modal-row");
+        span.classList.add("modal-row-text");
+        spanMemo.classList.add("modal-row-text");
 
-            button.addEventListener("click", (e) => {
-                localStorage.removeItem(`${year}_${month}_${day}_startHour_${d}`);
-                localStorage.removeItem(`${year}_${month}_${day}_startMin_${d}`);
-                localStorage.removeItem(`${year}_${month}_${day}_endHour_${d}`);
-                localStorage.removeItem(`${year}_${month}_${day}_endMin_${d}`);
-                localStorage.removeItem(`${year}_${month}_${day}_memo_${d}`);
-                // for文でindexの訂正が必要
-                for (let i = d; i < index; i++) {
-                    localStorage.setItem(`${year}_${month}_${day}_startHour_${i}`, localStorage.getItem(`${year}_${month}_${day}_startHour_${i + 1}`));
-                    localStorage.setItem(`${year}_${month}_${day}_startMin_${i}`, localStorage.getItem(`${year}_${month}_${day}_startMin_${i + 1}`));
-                    localStorage.setItem(`${year}_${month}_${day}_endHour_${i}`, localStorage.getItem(`${year}_${month}_${day}_endHour_${i + 1}`));
-                    localStorage.setItem(`${year}_${month}_${day}_endMin_${i}`, localStorage.getItem(`${year}_${month}_${day}_endMin_${i + 1}`));
-                    localStorage.setItem(`${year}_${month}_${day}_memo_${i}`, localStorage.getItem(`${year}_${month}_${day}_memo_${i + 1}`));
-                }
-                localStorage.removeItem(`${year}_${month}_${day}_startHour_${index}`);
-                localStorage.removeItem(`${year}_${month}_${day}_startMin_${index}`);
-                localStorage.removeItem(`${year}_${month}_${day}_endHour_${index}`);
-                localStorage.removeItem(`${year}_${month}_${day}_endMin_${index}`);
-                localStorage.removeItem(`${year}_${month}_${day}_memo_${index}`);
-                localStorage.setItem(`${year}_${month}_${day}_index`, index - 1);
-                createDisplayArea(year, month, day);
-            });
+        button.addEventListener("click", (e) => {
+            localStorage.removeItem(`${year}_${month}_${day}_startHour_${d}`);
+            localStorage.removeItem(`${year}_${month}_${day}_startMin_${d}`);
+            localStorage.removeItem(`${year}_${month}_${day}_endHour_${d}`);
+            localStorage.removeItem(`${year}_${month}_${day}_endMin_${d}`);
+            localStorage.removeItem(`${year}_${month}_${day}_memo_${d}`);
+            // for文でindexの訂正が必要
+            for (let i = d; i < index; i++) {
+                localStorage.setItem(`${year}_${month}_${day}_startHour_${i}`, localStorage.getItem(`${year}_${month}_${day}_startHour_${i + 1}`));
+                localStorage.setItem(`${year}_${month}_${day}_startMin_${i}`, localStorage.getItem(`${year}_${month}_${day}_startMin_${i + 1}`));
+                localStorage.setItem(`${year}_${month}_${day}_endHour_${i}`, localStorage.getItem(`${year}_${month}_${day}_endHour_${i + 1}`));
+                localStorage.setItem(`${year}_${month}_${day}_endMin_${i}`, localStorage.getItem(`${year}_${month}_${day}_endMin_${i + 1}`));
+                localStorage.setItem(`${year}_${month}_${day}_memo_${i}`, localStorage.getItem(`${year}_${month}_${day}_memo_${i + 1}`));
+            }
+            localStorage.removeItem(`${year}_${month}_${day}_startHour_${index}`);
+            localStorage.removeItem(`${year}_${month}_${day}_startMin_${index}`);
+            localStorage.removeItem(`${year}_${month}_${day}_endHour_${index}`);
+            localStorage.removeItem(`${year}_${month}_${day}_endMin_${index}`);
+            localStorage.removeItem(`${year}_${month}_${day}_memo_${index}`);
+            localStorage.setItem(`${year}_${month}_${day}_index`, index - 1);
+            createDisplayArea(year, month, day);
+        });
         p.appendChild(button);
         p.appendChild(span);
+        p.appendChild(spanMemo);
         displayArea.appendChild(p);
     }
 }
