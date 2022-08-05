@@ -184,7 +184,7 @@ downMonth.addEventListener("click", (e) => {
 
 
 
-changeCalendar(2022, 7);
+changeCalendar(todayYear, todayMonth);
 
 let timeSelect = () => {
     let startHour = document.getElementById("startHour");
@@ -243,14 +243,37 @@ const setSaveEvent = (year, month, day) => {
         let endMin = document.getElementById("endMin").value;
         let text = document.getElementById("scheduleText").value;
         let index = Number(localStorage.getItem(`${year}_${month}_${day}_index`));
+        let saveIndex = index + 1;
         if (!text) {
             alert('内容が入力されていません。');
         } else {
-            localStorage.setItem(`${year}_${month}_${day}_startHour_${index + 1}`, startHour);
-            localStorage.setItem(`${year}_${month}_${day}_startMin_${index + 1}`, startMin);
-            localStorage.setItem(`${year}_${month}_${day}_endHour_${index + 1}`, endHour);
-            localStorage.setItem(`${year}_${month}_${day}_endMin_${index + 1}`, endMin);
-            localStorage.setItem(`${year}_${month}_${day}_memo_${index + 1}`, text);
+            for (let i = 1; i <= index; i++) {
+                let targetHour = Number(localStorage.getItem(`${year}_${month}_${day}_startHour_${i}`));
+                let targetEndHour = Number(localStorage.getItem(`${year}_${month}_${day}_endHour_${i}`));
+                let targetMin = Number(localStorage.getItem(`${year}_${month}_${day}_startMin_${i}`));
+                let targetEndMin = Number(localStorage.getItem(`${year}_${month}_${day}_endMin_${i}`));
+                if (targetHour > startHour || (targetHour == startHour && targetMin > startMin) ||
+                    (targetHour == startHour && targetMin == startMin && targetEndHour > endHour) ||
+                    (targetHour == startHour && targetMin == startMin && targetEndHour == endHour && targetEndMin > endMin)) {
+                    saveIndex = i;
+                    break;
+                }
+            }
+            if (saveIndex != index + 1) {
+                console.log("削除");
+                for (let i = index; i >= saveIndex; i--) {
+                    localStorage.setItem(`${year}_${month}_${day}_startHour_${i + 1}`, localStorage.getItem(`${year}_${month}_${day}_startHour_${i}`));
+                    localStorage.setItem(`${year}_${month}_${day}_startMin_${i + 1}`, localStorage.getItem(`${year}_${month}_${day}_startMin_${i}`));
+                    localStorage.setItem(`${year}_${month}_${day}_endHour_${i + 1}`, localStorage.getItem(`${year}_${month}_${day}_endHour_${i}`));
+                    localStorage.setItem(`${year}_${month}_${day}_endMin_${i + 1}`, localStorage.getItem(`${year}_${month}_${day}_endMin_${i}`));
+                    localStorage.setItem(`${year}_${month}_${day}_memo_${i + 1}`, localStorage.getItem(`${year}_${month}_${day}_memo_${i}`));
+                }
+            }
+            localStorage.setItem(`${year}_${month}_${day}_startHour_${saveIndex}`, startHour);
+            localStorage.setItem(`${year}_${month}_${day}_startMin_${saveIndex}`, startMin);
+            localStorage.setItem(`${year}_${month}_${day}_endHour_${saveIndex}`, endHour);
+            localStorage.setItem(`${year}_${month}_${day}_endMin_${saveIndex}`, endMin);
+            localStorage.setItem(`${year}_${month}_${day}_memo_${saveIndex}`, text);
             localStorage.setItem(`${year}_${month}_${day}_index`, index + 1);
             document.getElementById("scheduleText").value = "";
             createDisplayArea(year, month, day);
