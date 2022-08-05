@@ -14,14 +14,12 @@ header {
     margin: 0;
 }
 
-#link-about,
-#link-cats {
+.link-custom {
     color: #595959;
     text-decoration: none;
 }
 
-#link-about:hover,
-#link-cats:hover {
+.link-custom:hover {
     color: #59595972;
     text-decoration: underline;
 }
