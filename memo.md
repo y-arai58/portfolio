@@ -31,6 +31,7 @@ git clone https://github.com/myname/project1
 - 「command + shift + R」 = スーパーリロード
 - 「tab」= インデントを左にずらす
 - 「tab + shift」= インデントを右にずらす
+- 「command + J」= ターミナルを表示
 
 ### [.getElementById();](https://developer.mozilla.org/ja/docs/Web/API/Document/getElementById)
 - idを指定して要素を取得（HTMLから引っ張ってくる）
