@@ -319,37 +319,3 @@ const initDisplayArea = (year, month, day) => {
         localStorage.setItem(`${year}_${month}_${day}_index`, 0);
     }
 }
-
-
-
-// for(){
-//     <p>
-//         <button>
-//             ✗
-//         </button>
-//         <span>aaaaa</span>
-//     </p>
-// }
-
-
-
-
-// 1 aaaaaa
-// 2 bbbbb
-// 3 vvvvv
-// 5 ggggg
-// 5 ggggg
-
-// 4 > 3 > 3
-// 5 > 4 > 4
-
-// 5
-
-// for (let index = 1; index < 11; index++) {
-//     localStorage.removeItem(`2022_7_7_startHour_${index}`);
-//     localStorage.removeItem(`2022_7_7_startMin_${index}`);
-//     localStorage.removeItem(`2022_7_7_endHour_${index}`);
-//     localStorage.removeItem(`2022_7_7_endMin_${index}`);
-//     localStorage.removeItem(`2022_7_7_memo_${index}`);
-// }
-// localStorage.setItem(`2022_7_7_index`, 0);
