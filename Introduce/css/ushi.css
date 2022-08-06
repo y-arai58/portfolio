@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+}
+
+.title-logo {
+    margin-left: 8.55rem;
+}
+
+header {
+    margin-bottom: 3rem;
+    border-bottom: #595959f0 1px solid;
+}
+
+.catFace {
+    width: 45rem;
+    height: 50rem;
+    opacity: 0.2;
+}
+
+.bigCat {
+    position: relative;
+    margin-right: 5rem;
+}
+
+.name {
+    position: absolute;
+    top: 7.5rem;
+    left: 25rem;
+    font-size: 50px;
+    color: #595959f0;
+}
+
+.USHI {
+    display: flex;
+}
+
+.pictures {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    height: 50rem;
+    margin-left: 1rem;
+}
+
+.pictures img {
+    padding-bottom: 3rem;
+    opacity: 0.9;
+}
+
+.odd {
+    display: flex;
+    flex-direction: column;
+    margin: 0 5rem 0 2rem;
+}
+
+.even {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5rem;
+}

@@ -1,5 +1,5 @@
 body {
-    width: 960px;
+    width: 1300px;
     height: 1500px;
     color: #595959;
     margin: 0 auto;
@@ -21,7 +21,7 @@ header {
 
 .link-custom:hover {
     color: #59595972;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 header ul {
