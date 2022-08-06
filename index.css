@@ -1,7 +1,8 @@
 body {
     background-color: #b0d0e6;
     width: 100%;
-    height: 1000px;
+    height: 1500px;
+    color: #4b4b4b;
 }
 
 header {
@@ -14,6 +15,40 @@ header {
 
 .logo {
     text-align: center;
+}
+
+.MyIntroduce {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45rem;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+    margin-top: 5rem;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 1.5rem 1rem;
+}
+
+.MyIntroduce img {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 100px;
+}
+
+.MyIntroduce-comment {
+    margin-left: 4rem;
+    /* color: rgb(250, 235, 215); */
+    color: #595959;
+    /* background-color: #5c332f; */
+}
+
+.MyIntroduce-comment h3 {
+    margin: 0;
+}
+
+.MyIntroduce-comment p {
+    line-height: 1.8rem;
 }
 
 .card {
@@ -52,4 +87,14 @@ header {
     border-radius: 10px;
     line-height: 1.8rem;
     margin-top: 2.4rem;
+}
+
+.link-custom {
+    color: #595959;
+    text-decoration: none;
+}
+
+.link-custom:hover {
+    color: #59595972;
+    text-decoration: none;
 }
