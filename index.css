@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #b0d0e6;
     width: 100%;
@@ -11,6 +15,49 @@ header {
     padding-top: 20px;
     margin-bottom: 3rem;
     border-bottom: solid 1.5px #595959;
+}
+
+.standing-ushi {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: fixed;
+    right: 10px;
+    bottom: 0;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.standing-ushi:hover {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: fixed;
+    right: 10px;
+    bottom: 0;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    animation: hurueru 0.2s infinite;
+}
+
+@keyframes hurueru {
+    0% {
+        transform: translate(0px, 0px) rotateZ(0deg)
+    }
+
+    25% {
+        transform: translate(4px, 0px) rotateZ(1deg)
+    }
+
+    50% {
+        transform: translate(0px, 0px) rotateZ(0deg)
+    }
+
+    75% {
+        transform: translate(4px, 0px) rotateZ(-1deg)
+    }
+
+    100% {
+        transform: translate(0px, 0px) rotateZ(0deg)
+    }
 }
 
 .logo {
@@ -28,6 +75,8 @@ header {
     background-color: #fff;
     border-radius: 10px;
     padding: 1.5rem 1rem;
+    box-shadow: 0 1.9px 2.5px rgba(0, 0, 0, 0.057),
+        0 5px 6.1px rgba(0, 0, 0, 0.076);
 }
 
 .MyIntroduce img {
@@ -66,11 +115,22 @@ header {
 .card img {
     margin-right: 3rem;
     width: 100%;
+    box-shadow: 0 1.9px 2.5px rgba(0, 0, 0, 0.057),
+        0 5px 6.1px rgba(0, 0, 0, 0.076);
+    border-radius: 0.3rem;
+    transition: 0.5s all;
 }
 
-.image {
-    width: 45%;
+.card img:hover {
+    transform: scale(1.05, 1.05);
+    transition: 0.5s all;
 }
+
+.imageArea {
+    width: 45%;
+    overflow: hidden;
+}
+
 
 .explanation {
     width: 50%;
