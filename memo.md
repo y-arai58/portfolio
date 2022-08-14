@@ -8,6 +8,17 @@ const setTitle = (year, month) => {
 }
 ```
 
+### breakとreturn
+- break：swich(case)文を終了・for文のループを抜ける
+- return：関数の実行を停止する
+  値が指定されていれば、その値を関数の呼び出し元に返す
+
+### Number
+文字列や変数を数値として使用する
+```
+Number(lines[0]);
+```
+
 ### Github
 - 参加するリポジトリのURLをもらう
 - ターミナル上で、保存先のフォルダまで移動
@@ -118,3 +129,17 @@ modal.classList.remove('hidden');
 // 特定の要素のクラス名を追加したり、削除したり、参照したりすることが出来る便利なプロパティ
 // classListの後にメソッドを定義することにより、追加削除などの機能を指定することができる
 ```
+
+### .value
+selectボックスの値を取得
+
+### .splitと.slice
+- split()：split(何で分割するかを入力);
+　　　　　　 文字列をリスト化
+- slice()：slice(配列内の指定した項目)
+　　　　　　 リストの中身を取り出す
+
+### 配列の最後尾を選択する
+- array[array.length -1]
+- array.pop()
+- array.slice(-1)[0]
