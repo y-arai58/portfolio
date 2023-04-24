@@ -11,10 +11,12 @@ body {
 
 header {
     width: 100%;
-    height: 4rem;
+    height: 4.5rem;
     padding-top: 20px;
-    margin-bottom: 3rem;
-    border-bottom: solid 1.5px #595959;
+}
+
+main{
+    margin: 0 5rem ;
 }
 
 .standing-ushi {
@@ -40,23 +42,23 @@ header {
 
 @keyframes hurueru {
     0% {
-        transform: translate(0px, 0px) rotateZ(0deg)
+        transform: translate(0px, 2px) rotateZ(0deg)
     }
 
     25% {
-        transform: translate(4px, 0px) rotateZ(1deg)
+        transform: translate(2px, 0px) rotateZ(0deg)
     }
 
     50% {
-        transform: translate(0px, 0px) rotateZ(0deg)
+        transform: translate(0px, 2px) rotateZ(0deg)
     }
 
     75% {
-        transform: translate(4px, 0px) rotateZ(-1deg)
+        transform: translate(2px, 0px) rotateZ(0deg)
     }
 
     100% {
-        transform: translate(0px, 0px) rotateZ(0deg)
+        transform: translate(0px, 2px) rotateZ(0deg)
     }
 }
 
@@ -64,56 +66,76 @@ header {
     text-align: center;
 }
 
-.MyIntroduce {
+.first-impression {
+    background-color: #fff;
+    width: 100%;
+    height: 300px;
+}
+
+.my-introduce {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 45rem;
+    width: fit-content;
     margin: 0 auto;
     margin-bottom: 6rem;
     margin-top: 5rem;
     background-color: #fff;
     border-radius: 10px;
-    padding: 1.5rem 1rem;
+    padding: 1rem 5rem 1rem 2rem;
     box-shadow: 0 1.9px 2.5px rgba(0, 0, 0, 0.057),
         0 5px 6.1px rgba(0, 0, 0, 0.076);
 }
 
-.MyIntroduce img {
-    width: 12rem;
-    height: 12rem;
+.my-introduce img {
+    width: 10rem;
+    height: 10rem;
     border-radius: 100px;
 }
 
-.MyIntroduce-comment {
-    margin-left: 4rem;
-    /* color: rgb(250, 235, 215); */
+.personal-information {
+    display: flex;
+    align-items: baseline;
+    margin-left: 3rem;
     color: #595959;
-    /* background-color: #5c332f; */
 }
 
-.MyIntroduce-comment h3 {
-    margin: 0;
+.personal-information p {
+    margin:0;
+    padding: 0 0 0 10px ;
+    font-size: 14px;
 }
 
-.MyIntroduce-comment p {
+.personal-information h3{
+    margin:0;
+}
+
+
+.my-introduce__comment {
+    margin-left: 3rem;
+    color: #595959;
+    font-size: 15px;
+}
+
+.my-introduce__comment p {
     line-height: 1.8rem;
+    margin: 16px 0 0 0 ;
+}
+
+.cards-wrapper {
+    display: flex;
+    gap: 0 60px;
 }
 
 .card {
-    margin: 0 10rem 0 10rem;
-    padding: 1.2rem;
-    margin-bottom: 3rem;
+    width: 45%;
+    padding: 2.2rem;
     border-radius: 15px;
     box-shadow: 0 1.9px 2.5px rgba(0, 0, 0, 0.057),
         0 5px 6.1px rgba(0, 0, 0, 0.076);
     background-color: rgba(250, 235, 215, 0.616);
-    display: flex;
-    height: 35vh;
 }
 
-.card img {
-    margin-right: 3rem;
+.card-img {
     width: 100%;
     box-shadow: 0 1.9px 2.5px rgba(0, 0, 0, 0.057),
         0 5px 6.1px rgba(0, 0, 0, 0.076);
@@ -121,32 +143,44 @@ header {
     transition: 0.5s all;
 }
 
-.card img:hover {
+.card-img:hover {
     transform: scale(1.05, 1.05);
     transition: 0.5s all;
 }
 
-.imageArea {
-    width: 45%;
+.about-works{
+    padding:5px 0 30px 0;
+}
+.about-works h2 {
+    margin:0;
+}
+.about-works p {
+    margin:0;
+    padding: 0;
+    color: #7e7e7e;
+}
+
+.image-area {
     overflow: hidden;
 }
 
-
 .explanation {
-    width: 50%;
-    padding: 0rem 2rem;
+    padding: 0rem 1rem;
 }
-
-.explanation h2 {
-    margin-top: 0;
+.explanation p{
+    margin: 0;
+    padding: 25px 0 10px 0;
 }
 
 .comment {
     background-color: #fff;
-    padding: 0.5rem 0 0.5rem 0.5rem;
+    padding: 1.5rem;
     border-radius: 10px;
     line-height: 1.8rem;
-    margin-top: 2.4rem;
+    margin-top: 1.7rem;
+    height: fit-content;
+    min-height: 70px;
+    font-size: 15px;
 }
 
 .link-custom {
@@ -157,4 +191,8 @@ header {
 .link-custom:hover {
     color: #59595972;
     text-decoration: none;
+}
+
+.type-icon {
+    width: 25px;
 }
