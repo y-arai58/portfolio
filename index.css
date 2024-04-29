@@ -1,198 +1,200 @@
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    background-color: #b0d0e6;
-    width: 100%;
-    height: 1500px;
-    color: #4b4b4b;
+  background-color: #b0d0e6;
+  width: 100%;
+  height: 1500px;
+  color: #4b4b4b;
 }
 
 header {
-    width: 100%;
-    height: 4.5rem;
-    padding-top: 20px;
+  width: 100%;
+  height: 4.5rem;
+  padding-top: 40px;
+}
+header::after {
+  content: '';
+  background: url('/img/melt.svg');
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 50px;
 }
 
-main{
-    margin: 0 5rem ;
+main {
+  margin: 0 5rem;
 }
 
 .standing-ushi {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    position: fixed;
-    right: 10px;
-    bottom: 0;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: fixed;
+  right: 10px;
+  bottom: 0;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .standing-ushi:hover {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    position: fixed;
-    right: 10px;
-    bottom: 0;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-    animation: hurueru 0.2s infinite;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: fixed;
+  right: 10px;
+  bottom: 0;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  animation: hurueru 0.2s infinite;
 }
 
 @keyframes hurueru {
-    0% {
-        transform: translate(0px, 2px) rotateZ(0deg)
-    }
+  0% {
+    transform: translate(0px, 0.5px) rotateZ(0deg);
+  }
 
-    25% {
-        transform: translate(2px, 0px) rotateZ(0deg)
-    }
+  25% {
+    transform: translate(0.5px, 0px) rotateZ(0deg);
+  }
 
-    50% {
-        transform: translate(0px, 2px) rotateZ(0deg)
-    }
+  50% {
+    transform: translate(0px, 0.5px) rotateZ(0deg);
+  }
 
-    75% {
-        transform: translate(2px, 0px) rotateZ(0deg)
-    }
+  75% {
+    transform: translate(0.5px, 0px) rotateZ(0deg);
+  }
 
-    100% {
-        transform: translate(0px, 2px) rotateZ(0deg)
-    }
+  100% {
+    transform: translate(0px, 0.5px) rotateZ(0deg);
+  }
 }
 
 .logo {
-    text-align: center;
-}
-
-.first-impression {
-    background-color: #fff;
-    width: 100%;
-    height: 300px;
+  text-align: center;
 }
 
 .my-introduce {
-    display: flex;
-    align-items: center;
-    width: fit-content;
-    margin: 0 auto;
-    margin-bottom: 6rem;
-    margin-top: 5rem;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 1rem 5rem 1rem 2rem;
-    box-shadow: 0 1.9px 2.5px rgba(0, 0, 0, 0.057),
-        0 5px 6.1px rgba(0, 0, 0, 0.076);
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+  margin-top: 5rem;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1rem 5rem 1rem 2rem;
+  box-shadow: 0 1.9px 2.5px rgba(0, 0, 0, 0.057),
+    0 5px 6.1px rgba(0, 0, 0, 0.076);
 }
 
 .my-introduce img {
-    width: 10rem;
-    height: 10rem;
-    border-radius: 100px;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 100px;
 }
 
 .personal-information {
-    display: flex;
-    align-items: baseline;
-    margin-left: 3rem;
-    color: #595959;
+  display: flex;
+  align-items: baseline;
+  margin-left: 3rem;
+  color: #595959;
 }
 
 .personal-information p {
-    margin:0;
-    padding: 0 0 0 10px ;
-    font-size: 14px;
+  margin: 0;
+  padding: 0 0 0 10px;
+  font-size: 14px;
 }
 
-.personal-information h3{
-    margin:0;
+.personal-information h3 {
+  margin: 0;
 }
-
 
 .my-introduce__comment {
-    margin-left: 3rem;
-    color: #595959;
-    font-size: 15px;
+  margin-left: 3rem;
+  color: #595959;
+  font-size: 15px;
 }
 
 .my-introduce__comment p {
-    line-height: 1.8rem;
-    margin: 16px 0 0 0 ;
+  line-height: 1.8rem;
+  margin: 16px 0 0 0;
 }
 
 .cards-wrapper {
-    display: flex;
-    gap: 0 60px;
+  display: flex;
+  gap: 0 60px;
 }
 
 .card {
-    width: 45%;
-    padding: 2.2rem;
-    border-radius: 15px;
-    box-shadow: 0 1.9px 2.5px rgba(0, 0, 0, 0.057),
-        0 5px 6.1px rgba(0, 0, 0, 0.076);
-    background-color: rgba(250, 235, 215, 0.616);
+  width: 45%;
+  padding: 2.2rem;
+  border-radius: 15px;
+  box-shadow: 0 1.9px 2.5px rgba(0, 0, 0, 0.057),
+    0 5px 6.1px rgba(0, 0, 0, 0.076);
+  background-color: rgba(250, 235, 215, 0.616);
 }
 
 .card-img {
-    width: 100%;
-    box-shadow: 0 1.9px 2.5px rgba(0, 0, 0, 0.057),
-        0 5px 6.1px rgba(0, 0, 0, 0.076);
-    border-radius: 0.3rem;
-    transition: 0.5s all;
+  width: 100%;
+  box-shadow: 0 1.9px 2.5px rgba(0, 0, 0, 0.057),
+    0 5px 6.1px rgba(0, 0, 0, 0.076);
+  border-radius: 0.3rem;
+  transition: 0.5s all;
 }
 
 .card-img:hover {
-    transform: scale(1.05, 1.05);
-    transition: 0.5s all;
+  transform: scale(1.05, 1.05);
+  transition: 0.5s all;
 }
 
-.about-works{
-    padding:5px 0 30px 0;
+.about-works {
+  padding: 5px 0 30px 0;
 }
 .about-works h2 {
-    margin:0;
+  margin: 0;
 }
 .about-works p {
-    margin:0;
-    padding: 0;
-    color: #7e7e7e;
+  margin: 0;
+  padding: 0;
+  color: #7e7e7e;
 }
 
 .image-area {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .explanation {
-    padding: 0rem 1rem;
+  padding: 0rem 1rem;
 }
-.explanation p{
-    margin: 0;
-    padding: 25px 0 10px 0;
+.explanation p {
+  margin: 0;
+  padding: 25px 0 10px 0;
 }
 
 .comment {
-    background-color: #fff;
-    padding: 1.5rem;
-    border-radius: 10px;
-    line-height: 1.8rem;
-    margin-top: 1.7rem;
-    height: fit-content;
-    min-height: 70px;
-    font-size: 15px;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  line-height: 1.8rem;
+  margin-top: 1.7rem;
+  height: fit-content;
+  min-height: 70px;
+  font-size: 15px;
 }
 
 .link-custom {
-    color: #595959;
-    text-decoration: none;
+  color: #595959;
+  text-decoration: none;
 }
 
 .link-custom:hover {
-    color: #59595972;
-    text-decoration: none;
+  color: #59595972;
+  text-decoration: none;
 }
 
 .type-icon {
-    width: 25px;
+  width: 25px;
 }
