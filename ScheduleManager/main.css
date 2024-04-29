@@ -1,180 +1,178 @@
-main {
-    width: 100%;
-}
-
 body {
-    height: 100vh;
-    background-color: #6495ed !important;
+  background-color: #6495ed !important;
 }
 
-header {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+main {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+.month {
+  padding: 50px 0;
 }
 
 table {
-    border-collapse: collapse;
-    width: 100%;
-    table-layout: fixed;
-    margin: 0;
-    border-bottom: solid rgb(92, 92, 92) 1.1px !important;
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  margin: 0;
+  border-bottom: solid rgb(92, 92, 92) 1.1px !important;
 }
 
 th {
-    padding-right: 0.5rem;
-    text-align: right;
-    color: #fff;
+  padding-right: 0.5rem;
+  text-align: right;
+  color: #fff;
 }
 
 thead {
-    text-align: right;
-    background-color: #6495ed !important;
-    border-bottom: solid rgb(92, 92, 92) 1.1px !important;
+  text-align: right;
+  background-color: #6495ed !important;
+  border-bottom: solid rgb(92, 92, 92) 1.1px !important;
 }
 
 tbody {
-    border-bottom: solid rgba(132, 132, 132, 0.5) 1px !important;
+  border-bottom: solid rgba(132, 132, 132, 0.5) 1px !important;
 }
 
-
-
 td {
-    border: solid 1px;
-    height: 7rem;
-    text-align: right;
-    vertical-align: top;
-    padding-right: 10px;
-    border-right: solid rgba(132, 132, 132, 0.5) 1px !important;
+  border: solid 1px;
+  height: 7rem;
+  text-align: right;
+  vertical-align: top;
+  padding-right: 10px;
+  border-right: solid rgba(132, 132, 132, 0.5) 1px !important;
 }
 
 .pointer {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #close {
-    cursor: pointer;
-    width: 10rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    text-align: center;
-    padding: 12px;
-    margin: 16px auto 0;
-    background: #6495ed;
-    color: white;
+  cursor: pointer;
+  width: 10rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  padding: 12px;
+  margin: 16px auto 0;
+  background: #6495ed;
+  color: white;
 }
 
 #mask {
-    background: rgba(0, 0, 0, 0.4);
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: 1;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
 }
 
 #modal {
-    background: #fff;
-    color: #555;
-    width: 500px;
-    height: 600px;
-    padding: 40px;
-    border-radius: 4px;
-    position: absolute;
-    top: 40px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    z-index: 2;
+  background: #fff;
+  color: #555;
+  width: 500px;
+  height: 600px;
+  padding: 40px;
+  border-radius: 4px;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 2;
 }
 
 #modal p {
-    margin: 0 0 20px;
+  margin: 0 0 20px;
 }
 
 #mask.hidden {
-    display: none;
+  display: none;
 }
 
 #modal.hidden {
-    display: none;
+  display: none;
 }
 
 #downMonth,
 #addMonth {
-    width: 2rem;
-    height: 2rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 #title {
-    font-size: 1.4rem;
-    color: #fff;
-    padding-left: 1.3rem;
-    padding-right: 1.3rem;
+  font-size: 1.4rem;
+  color: #fff;
+  padding-left: 1.3rem;
+  padding-right: 1.3rem;
 }
 
 .holiday {
-    color: red;
+  color: red;
 }
 
 table p {
-    margin-bottom: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  margin-bottom: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .modal-memo-row {
-    display: inline-block;
-    width: 65%;
+  display: inline-block;
+  width: 65%;
 }
 
 .modal-row {
-    margin-right: 0.5rem;
-    vertical-align: top;
+  margin-right: 0.5rem;
+  vertical-align: top;
 }
 
 #displayArea {
-    margin-top: 1rem;
-    height: 300px;
-    overflow: scroll;
-    /* background-color: aquamarine; */
+  margin-top: 1rem;
+  height: 300px;
+  overflow: scroll;
+  /* background-color: aquamarine; */
 }
 
 .saveScheduleBtn {
-    color: #fff;
-    background-color: #6495ed;
-    border-radius: 5px;
-    width: 5rem;
-    height: 2.2rem;
-    margin-top: 0.5rem;
-    border: none;
+  color: #fff;
+  background-color: #6495ed;
+  border-radius: 5px;
+  width: 5rem;
+  height: 2.2rem;
+  margin-top: 0.5rem;
+  border: none;
 }
 
 .saveScheduleBtn:hover {
-    color: #fff;
-    background: #6494edb3;
+  color: #fff;
+  background: #6494edb3;
 }
 
 .saveScheduleBtnDiv {
-    display: flex;
-    width: 100%;
-    justify-content: flex-end
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
 }
 
 .deleteBtn {
-    color: #fff;
-    background-color: #6495ed;
-    border-radius: 5px;
-    border: none;
+  color: #fff;
+  background-color: #6495ed;
+  border-radius: 5px;
+  border: none;
 }
 
-
 .deleteBtn:hover {
-    color: #fff;
-    background: #6494edb3;
+  color: #fff;
+  background: #6494edb3;
 }
 
 .modal-row-text {
-    font-size: 1.1rem;
+  font-size: 1.1rem;
 }
