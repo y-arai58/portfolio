@@ -3,29 +3,49 @@ html {
 }
 
 body {
-  background-color: #b0d0e6;
+  background-color: #a3d9a5;
   width: 100%;
-  height: 1500px;
-  color: #4b4b4b;
+  height: 2500px;
+  color: #5d4037;
 }
 
 header {
-  width: 100%;
-  height: 4.5rem;
-  padding-top: 40px;
+  /* width: 100%; */
+  /* height: 1000px; */
+  margin: 0 0 100px;
+  z-index: 999;
 }
-header::after {
-  content: '';
-  background: url('/img/melt.svg');
-  position: absolute;
-  top: 0;
-  left: 0;
+
+header img {
+  /* content: ''; */
+  /* background: url('/img/melt-chocolate.png') repeat; */
   width: 100vw;
-  height: 50px;
+  height: 800px;
+  /* background-size: 100% 100%;
+  background-position: center;
+  background-repeat: repeat; */
+  position: absolute;
+  top: 0px;
+  left: 0;
+  z-index: 0;
+}
+
+.header-text {
+  margin: 20px auto;
+  width: 100%;
+  z-index: 1;
+  position: sticky;
+}
+
+.heading {
+  text-align: center;
+  font-size: 32px;
+  padding: 0 0 20px;
 }
 
 main {
   margin: 0 5rem;
+  z-index: -1;
 }
 
 .standing-ushi {
@@ -71,10 +91,6 @@ main {
   }
 }
 
-.logo {
-  text-align: center;
-}
-
 .my-introduce {
   display: flex;
   align-items: center;
@@ -82,7 +98,7 @@ main {
   margin: 0 auto;
   margin-bottom: 6rem;
   margin-top: 5rem;
-  background-color: #fff;
+  background-color: #5d4037;
   border-radius: 10px;
   padding: 1rem 5rem 1rem 2rem;
   box-shadow: 0 1.9px 2.5px rgba(0, 0, 0, 0.057),
@@ -99,22 +115,24 @@ main {
   display: flex;
   align-items: baseline;
   margin-left: 3rem;
-  color: #595959;
+  color: #ffffff;
 }
 
 .personal-information p {
   margin: 0;
   padding: 0 0 0 10px;
   font-size: 14px;
+  color: #ffffff;
 }
 
 .personal-information h3 {
   margin: 0;
+  color: #ffffff;
 }
 
 .my-introduce__comment {
   margin-left: 3rem;
-  color: #595959;
+  color: #ffffff;
   font-size: 15px;
 }
 
@@ -134,7 +152,7 @@ main {
   border-radius: 15px;
   box-shadow: 0 1.9px 2.5px rgba(0, 0, 0, 0.057),
     0 5px 6.1px rgba(0, 0, 0, 0.076);
-  background-color: rgba(250, 235, 215, 0.616);
+  background-color: #cff1d6;
 }
 
 .card-img {
@@ -159,7 +177,7 @@ main {
 .about-works p {
   margin: 0;
   padding: 0;
-  color: #7e7e7e;
+  /* color: #7e7e7e; */
 }
 
 .image-area {
@@ -186,12 +204,12 @@ main {
 }
 
 .link-custom {
-  color: #595959;
+  color: #5d4037;
   text-decoration: none;
 }
 
 .link-custom:hover {
-  color: #59595972;
+  color: #d2b48c;
   text-decoration: none;
 }
 
