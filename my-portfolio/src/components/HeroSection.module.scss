@@ -1,0 +1,63 @@
+// src/components/HeroSection.module.scss
+.fv {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+  background: linear-gradient(to right, #eef3f9, #ffffff);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.fvContent {
+  flex: 1 1 300px;
+  max-width: 600px;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #007acc;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s;
+
+  &:hover {
+    background-color: #005f99;
+  }
+}
+
+.fvImage {
+  flex: 1 1 300px;
+  max-width: 400px;
+  text-align: center;
+
+  img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+}
