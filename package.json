@@ -1,7 +1,9 @@
 {
   "dependencies": {
-    "@types/react": "^19.1.5",
     "react": "^19.1.0",
     "sass": "^1.89.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.5"
   }
 }
