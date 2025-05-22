@@ -2,9 +2,9 @@ import './App.scss';
 
 function App() {
   return (
-    <>
-      <p className='title'>HELLO </p>
-    </>
+    <div>
+      <h1>こんにちは</h1>
+    </div>
   );
 }
 
