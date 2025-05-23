@@ -7,6 +7,8 @@ import {
   FaReact,
   FaWordpress,
   FaSketch,
+  FaSass,
+  FaGulp,
 } from 'react-icons/fa';
 import './Skills.scss';
 import { IoLogoVercel } from 'react-icons/io5';
@@ -21,6 +23,8 @@ import {
   SiFigma,
   SiAdobeillustrator,
   SiAdobepremierepro,
+  SiStorybook,
+  SiJquery,
 } from 'react-icons/si';
 
 export const Skills: React.FC = () => {
@@ -28,7 +32,7 @@ export const Skills: React.FC = () => {
     <div className='skills'>
       <div className='skillsInner'>
         <div className='skillsContainer'>
-          {/* フロントエンド技術 */}
+          {/* フロントエンド技術  */}
           <div className='skillsCategory'>
             <h3 className='skillsCategoryTitle'>フロントエンド</h3>
             <div className='skillsGrid'>
@@ -41,8 +45,16 @@ export const Skills: React.FC = () => {
                 <p className='skillsTitle'>CSS</p>
               </div>
               <div className='skillsContents'>
+                <FaSass size={50} />
+                <p className='skillsTitle'>SCSS</p>
+              </div>
+              <div className='skillsContents'>
                 <SiJavascript size={50} />
                 <p className='skillsTitle'>JavaScript</p>
+              </div>
+              <div className='skillsContents'>
+                <SiJquery size={50} />
+                <p className='skillsTitle'>jQuery</p>
               </div>
               <div className='skillsContents'>
                 <SiTypescript size={50} />
@@ -135,6 +147,14 @@ export const Skills: React.FC = () => {
               <div className='skillsContents'>
                 <FaDocker size={50} />
                 <p className='skillsTitle'>Docker</p>
+              </div>
+              <div className='skillsContents'>
+                <FaGulp size={50} />
+                <p className='skillsTitle'>Gulp</p>
+              </div>
+              <div className='skillsContents'>
+                <SiStorybook size={50} />
+                <p className='skillsTitle'>Storybook</p>
               </div>
             </div>
           </div>
