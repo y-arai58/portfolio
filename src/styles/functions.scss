@@ -1,0 +1,11 @@
+@function calcLineHeight($font-size, $line-height) {
+  @return calc($line-height / $font-size);
+}
+
+@function pxToEm($font-size, $px) {
+  @return calc($px / $font-size * 1em);
+}
+
+@function calcWidth($windowWidth, $contentWidth) {
+  @return calc(($contentWidth / $windowWidth) * 100%);
+}

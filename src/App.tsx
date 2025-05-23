@@ -1,9 +1,18 @@
+import './styles/reset.scss';
+import './styles/global.scss';
 import './App.scss';
+import { Fv } from './components/Fv';
+import { Header } from './components/Header/Header';
+import { Nav } from './components/Nav';
 
 function App() {
   return (
     <div>
-      <h1>こんにちは</h1>
+      <div className='bgImage'>
+        <Header />
+        <Fv />
+      </div>
+      <Nav />
     </div>
   );
 }

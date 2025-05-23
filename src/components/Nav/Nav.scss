@@ -1,0 +1,13 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+}
+.navInner {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  max-width: 1092px;
+  width: 100%;
+}
