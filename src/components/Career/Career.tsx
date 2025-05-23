@@ -8,7 +8,7 @@ export const Career: React.FC = () => {
           <h2 className='careerTimelineHeading'>経歴</h2>
           <div className='careerTimelineItem'>
             <div className='careerTimelinePeriod'>
-              <p className='careerTimelineYear'>2023年8月 - 現在</p>
+              <p className='careerTimelineYear'>2022年8月 - 現在</p>
             </div>
             <div className='careerTimelineContent'>
               <h3 className='careerTimelineCompany'>株式会社サードスコープ</h3>
@@ -63,7 +63,7 @@ export const Career: React.FC = () => {
                 統計学以外の分野では、消費者心理学や行動経済学に興味を持ち、Webサイトやアプリにおいて消費者がどのように行動するかなど、デザインが与える心理的効果について研究。
                 <br />
                 <br />
-                緊急事態宣言発令中を含み、1年間大学を休学して動画編集のインターンと独学でのプログラミング学習に注力した。
+                緊急事態宣言発令後から1年間大学を休学し、動画編集のインターンと独学でのプログラミング学習に注力した。
               </p>
             </div>
           </div>
