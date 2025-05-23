@@ -6,6 +6,7 @@ import {
   FaNodeJs,
   FaReact,
   FaWordpress,
+  FaSketch,
 } from 'react-icons/fa';
 import './Skills.scss';
 import { IoLogoVercel } from 'react-icons/io5';
@@ -92,6 +93,10 @@ export const Skills: React.FC = () => {
               <div className='skillsContents'>
                 <SiFigma size={50} />
                 <p className='skillsTitle'>Figma</p>
+              </div>
+              <div className='skillsContents'>
+                <FaSketch size={50} />
+                <p className='skillsTitle'>Sketch</p>
               </div>
               <div className='skillsContents'>
                 <SiAdobeillustrator size={50} />
