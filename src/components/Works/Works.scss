@@ -1,0 +1,43 @@
+.works {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+.worksInner {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px 0;
+}
+
+.worksHeading {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.worksContents {
+  width: 300px;
+}
+
+.worksImage {
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  aspect-ratio: 1.5;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+.worksTitle {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
