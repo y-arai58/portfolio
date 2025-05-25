@@ -30,8 +30,27 @@
 
 .skillsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-template-columns: repeat(5, 1fr); // 5個のカラムに固定
   gap: 20px;
+}
+
+// レスポンシブ対応
+@media (max-width: 992px) {
+  .skillsGrid {
+    grid-template-columns: repeat(4, 1fr); // タブレットサイズでは4個に
+  }
+}
+
+@media (max-width: 768px) {
+  .skillsGrid {
+    grid-template-columns: repeat(3, 1fr); // 小さいタブレットでは3個に
+  }
+}
+
+@media (max-width: 576px) {
+  .skillsGrid {
+    grid-template-columns: repeat(2, 1fr); // モバイルでは2個に
+  }
 }
 
 .skillsContents {
@@ -53,11 +72,4 @@
   margin-top: 10px;
   font-size: 16px;
   font-weight: 500;
-}
-
-// レスポンシブ対応
-@media (max-width: 768px) {
-  .skillsGrid {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  }
 }

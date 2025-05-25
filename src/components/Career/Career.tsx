@@ -22,10 +22,11 @@ export const Career: React.FC = () => {
                 また、デザインやUX/UIにも興味があり、Figmaを用いたプロトタイピングやユーザビリティテストの実施なども行っている。
               </p>
               <div className='careerTimelineTech'>
-                <span className='careerTimelineTechItem'>HTML</span>
-                <span className='careerTimelineTechItem'>CSS</span>
-                <span className='careerTimelineTechItem'>JavaScript</span>
+                <span className='careerTimelineTechItem'>React</span>
+                <span className='careerTimelineTechItem'>TypeScript</span>
+                <span className='careerTimelineTechItem'>NestJS</span>
                 <span className='careerTimelineTechItem'>WordPress</span>
+                <p className='careerTimelineTechItemEtc'>etc...</p>
               </div>
             </div>
           </div>
@@ -65,6 +66,9 @@ export const Career: React.FC = () => {
                 <br />
                 緊急事態宣言発令後から1年間大学を休学し、動画編集のインターンと独学でのプログラミング学習に注力した。
               </p>
+              <div className='careerTimelineTech'>
+                <span className='careerTimelineTechItem'>R</span>
+              </div>
             </div>
           </div>
         </div>

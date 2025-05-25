@@ -8,15 +8,16 @@ import { Works } from './components/Works';
 import { useState } from 'react';
 import { Skills } from './components/Skill';
 import { Career } from './components/Career';
+import { Contact } from './components/Contact';
 
-type Tab = 'works' | 'skills' | 'career';
+type Tab = 'works' | 'skills' | 'career' | 'contact';
 
 function App() {
   const [tab, setTab] = useState<Tab>('works');
   return (
     <div>
       <div className='bgImage'>
-        <Header />
+        <Header setTab={setTab} />
         <Fv />
       </div>
       <Nav currentTab={tab} setTab={setTab} />
@@ -24,6 +25,7 @@ function App() {
         {tab === 'works' && <Works />}
         {tab === 'skills' && <Skills />}
         {tab === 'career' && <Career />}
+        {tab === 'contact' && <Contact />}
       </div>
     </div>
   );

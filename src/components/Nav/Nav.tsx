@@ -1,8 +1,8 @@
 import './Nav.scss';
 
 type Props = {
-  currentTab: 'works' | 'skills' | 'career';
-  setTab: (tab: 'works' | 'skills' | 'career') => void;
+  currentTab: 'works' | 'skills' | 'career' | 'contact';
+  setTab: (tab: 'works' | 'skills' | 'career' | 'contact') => void;
 };
 
 export const Nav: React.FC<Props> = ({ currentTab, setTab }) => {
