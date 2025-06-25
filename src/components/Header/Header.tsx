@@ -55,10 +55,7 @@ export const Header: React.FC<HeaderProps> = ({ setTab }) => {
               href='#top'
               onClick={handleTopClick}
             >
-              <img
-                className='headerIcon'
-                src='https://y-arai58.github.io/portfolio/assets/ushimikan.jpg'
-              />
+              <img className='headerIcon' src='/ushimikan.jpg' />
               <p className='headerName'>yui arai</p>
             </a>
             <p
