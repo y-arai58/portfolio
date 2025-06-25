@@ -1,15 +1,33 @@
 import './Contact.scss';
 
 export const Contact: React.FC = () => {
+  const copyEmail = () => {
+    const emailElement = document.getElementById('email');
+    if (!emailElement) return;
+    const email = emailElement.innerText;
+    navigator.clipboard
+      .writeText(email)
+      .then(() => {
+        alert('メールアドレスをコピーしました！');
+      })
+      .catch((err) => {
+        alert('コピーに失敗しました');
+        console.error(err);
+      });
+  };
+
   return (
     <div className='contact'>
       <div className='contactInner'>
         <h2 className='contactTitle'>お問い合わせ</h2>
         <p className='contactDescription'>
-          ご質問やお仕事のご依頼は、以下のフォームからお気軽にお問い合わせください。
+          ご質問やお仕事のご依頼は、下記メールアドレスまでお気軽にお問い合わせください。
         </p>
+        <button onClick={copyEmail} className='emailButton'>
+          <span id='email'>y.arai.dev222@gmail.com</span>
+        </button>
 
-        <form className='contactForm'>
+        {/* <form className='contactForm'>
           <div className='contactFormGroup'>
             <label htmlFor='name' className='contactLabel'>
               お名前 <span className='contactRequired'>必須</span>
@@ -46,7 +64,7 @@ export const Contact: React.FC = () => {
           <button type='submit' className='contactSubmit'>
             送信する
           </button>
-        </form>
+        </form> */}
       </div>
     </div>
   );
