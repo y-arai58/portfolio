@@ -4,7 +4,7 @@ export const Fv: React.FC = () => {
   return (
     <div className='fv'>
       <div className='fvInner'>
-        <img className='fvIcon' src='/ushimikan.jpg' />
+        <img className='fvIcon' src='/portfolio/ushimikan.jpg' />
         <div className='fvInfoContainer'>
           <p className='fvPost'>フロントエンドエンジニア</p>
           <p className='fvName'>yui arai</p>
