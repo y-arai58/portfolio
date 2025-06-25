@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 // Propsの型を定義
 type HeaderProps = {
-  setTab: (tab: 'works' | 'skills' | 'career' | 'contact') => void;
+  setTab: (tab: 'skills' | 'career' | 'contact') => void;
 };
 
 export const Header: React.FC<HeaderProps> = ({ setTab }) => {

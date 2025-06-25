@@ -1,20 +1,14 @@
 import './Nav.scss';
 
 type Props = {
-  currentTab: 'works' | 'skills' | 'career' | 'contact';
-  setTab: (tab: 'works' | 'skills' | 'career' | 'contact') => void;
+  currentTab: 'skills' | 'career' | 'contact';
+  setTab: (tab: 'skills' | 'career' | 'contact') => void;
 };
 
 export const Nav: React.FC<Props> = ({ currentTab, setTab }) => {
   return (
     <div className='nav'>
       <div className='navInner'>
-        <p
-          onClick={() => setTab('works')}
-          className={`navItem ${currentTab === 'works' ? 'navItemActive' : ''}`}
-        >
-          制作物
-        </p>
         <p
           onClick={() => setTab('skills')}
           className={`navItem ${
