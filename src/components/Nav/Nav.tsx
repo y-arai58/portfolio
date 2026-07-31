@@ -1,8 +1,10 @@
 import './Nav.scss';
 
+type Tab = 'skills' | 'career' | 'works' | 'contact';
+
 type Props = {
-  currentTab: 'skills' | 'career' | 'contact';
-  setTab: (tab: 'skills' | 'career' | 'contact') => void;
+  currentTab: Tab;
+  setTab: (tab: Tab) => void;
 };
 
 export const Nav: React.FC<Props> = ({ currentTab, setTab }) => {
@@ -24,6 +26,14 @@ export const Nav: React.FC<Props> = ({ currentTab, setTab }) => {
           }`}
         >
           経歴
+        </p>
+        <p
+          onClick={() => setTab('works')}
+          className={`navItem ${
+            currentTab === 'works' ? 'navItemActive' : ''
+          }`}
+        >
+          制作物
         </p>
       </div>
     </div>

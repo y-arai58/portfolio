@@ -8,8 +8,9 @@ import { useState } from 'react';
 import { Skills } from './components/Skill';
 import { Career } from './components/Career';
 import { Contact } from './components/Contact';
+import { Works } from './components/Works';
 
-type Tab = 'skills' | 'career' | 'contact';
+type Tab = 'skills' | 'career' | 'works' | 'contact';
 
 function App() {
   const [tab, setTab] = useState<Tab>('skills');
@@ -23,6 +24,7 @@ function App() {
       <div className='tabContents'>
         {tab === 'skills' && <Skills />}
         {tab === 'career' && <Career />}
+        {tab === 'works' && <Works />}
         {tab === 'contact' && <Contact />}
       </div>
     </div>

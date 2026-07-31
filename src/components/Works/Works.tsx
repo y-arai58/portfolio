@@ -7,9 +7,17 @@ export const Works: React.FC = () => {
       <div className='works'>
         <div className='worksInner'>
           <div className='worksContents'>
-            <a className='worksLink' href='/' />
-            <img className='worksImage' src='/public/lgtmeow.webp' />
-            <p className='worksTitle'>test1</p>
+            <a
+              className='worksLink'
+              href='https://araiyui.github.io/portfolio/'
+              target='_blank'
+              rel='noopener noreferrer'
+            />
+            <img
+              className='worksImage'
+              src='/portfolio/works/portfolio.png'
+            />
+            <p className='worksTitle'>ポートフォリオサイト</p>
           </div>
           <div className='worksContents'>
             <a className='worksLink' href='/' />
