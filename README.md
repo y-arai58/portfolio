@@ -1,54 +1,66 @@
-# React + TypeScript + Vite
+# Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+個人ポートフォリオサイト。React + TypeScript + Vite で構築し、GitHub Pages にデプロイしている。
 
-Currently, two official plugins are available:
+公開URL: https://araiyui.github.io/portfolio/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 構成
 
-## Expanding the ESLint configuration
+- FV（ファーストビュー）とヘッダーの下に、ナビゲーションでタブ切り替えするコンテンツエリアを配置
+- タブは「スキル」「経歴」の2種類（お問い合わせ(Contact)コンポーネントは実装済みだがナビ非表示）
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+src/
+  App.tsx                 # タブ状態を管理するルート
+  components/
+    Fv/                   # ファーストビュー
+    Header/                # ヘッダー
+    Nav/                   # タブ切り替えナビゲーション
+    Skill/                 # スキルタブ
+    Career/                # 経歴タブ
+    Contact/               # お問い合わせタブ（現在ナビから非表示）
+    Works/                 # 制作物セクション（現在非表示）
+  styles/                  # global.scss, reset.scss, mixin.scss など共通スタイル
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 技術スタック
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- React 19 / TypeScript
+- Vite 6（`@vitejs/plugin-react-swc`）
+- Sass（コンポーネントごとに `.scss` を分離）
+- ESLint（typescript-eslint）
+- gh-pages（GitHub Pages への手動デプロイ）
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+## セットアップ
+
+```bash
+npm install
 ```
+
+## 開発
+
+```bash
+npm run dev
+```
+
+## Lint
+
+```bash
+npm run lint
+```
+
+## ビルド
+
+```bash
+npm run build
+```
+
+`tsc -b && vite build` を実行し、`dist/` に出力する。
+
+## デプロイ
+
+```bash
+npm run deploy
+```
+
+`predeploy` でビルド後、`gh-pages` パッケージで `dist/` を GitHub Pages（`gh-pages` ブランチ）に公開する。公開先は `package.json` の `homepage` フィールド（https://araiyui.github.io/portfolio/）。
