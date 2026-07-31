@@ -9,7 +9,7 @@ export const Works: React.FC = () => {
           <div className='worksContents'>
             <a
               className='worksLink'
-              href='https://araiyui.github.io/portfolio/'
+              href='https://y-arai58.github.io/portfolio/'
               target='_blank'
               rel='noopener noreferrer'
             />
