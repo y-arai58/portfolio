@@ -33,6 +33,12 @@ const works: WorkItem[] = [
       '「撮った瞬間に完成する」がコンセプトのiPhone向けフィルムカメラ風アプリ',
     image: '/portfolio/works/toruto.png',
   },
+  {
+    title: 'こえのかけら',
+    description:
+      '声や文字で残した小さな出来事を、時刻ごとのタイムラインで眺められる個人用の記録帳',
+    image: '/portfolio/works/koe-no-kakera.png',
+  },
 ];
 
 export const Works: React.FC = () => {
