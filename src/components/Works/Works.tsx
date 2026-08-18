@@ -39,6 +39,12 @@ const works: WorkItem[] = [
       '声や文字で残した小さな出来事を、時刻ごとのタイムラインで眺められる個人用の記録帳',
     image: '/portfolio/works/koe-no-kakera.png',
   },
+  {
+    title: 'mochizuki | 望月',
+    description:
+      'ありがとうを記録すると月が満ちるアプリ。30件で望月になり、月ごとに一つの月相が残る',
+    image: '/portfolio/works/mochizuki.png',
+  },
 ];
 
 export const Works: React.FC = () => {
